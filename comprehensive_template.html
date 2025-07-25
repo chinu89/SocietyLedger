@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Society Maintenance Bill - Complete</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 15px;
+            line-height: 1.4;
+            color: #000;
+            font-size: 12px;
+        }
+        
+        .bill-container {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-width: 100%;
+            page-break-after: always;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .header h2 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .bill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .member-section {
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 3px;
+        }
+        
+        .two-column {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .field-row {
+            display: flex;
+            margin-bottom: 3px;
+        }
+        
+        .field-label {
+            min-width: 120px;
+            font-weight: bold;
+        }
+        
+        .field-value {
+            flex: 1;
+            border-bottom: 1px dotted #666;
+            min-height: 16px;
+        }
+        
+        .charges-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 11px;
+        }
+        
+        .charges-table th,
+        .charges-table td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            text-align: left;
+        }
+        
+        .charges-table th {
+            background-color: #e0e0e0;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .amount {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .total-row {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        .grand-total-row {
+            background-color: #d0d0d0;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .payment-section {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .payment-detail {
+            border: 1px solid #ccc;
+            padding: 8px;
+            background-color: #f9f9f9;
+        }
+        
+        .payment-detail h4 {
+            margin: 0 0 8px 0;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 3px;
+        }
+        
+        .summary-section {
+            border: 2px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .footer {
+            margin-top: 15px;
+            border-top: 1px solid #000;
+            padding-top: 10px;
+            font-size: 10px;
+        }
+        
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .signature-box {
+            text-align: center;
+            width: 200px;
+        }
+        
+        .signature-line {
+            border-top: 1px solid #000;
+            margin-top: 40px;
+            padding-top: 5px;
+        }
+        
+        @media print {
+            .bill-container {
+                page-break-inside: avoid;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bill-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>SOCIETY MAINTENANCE BILL</h1>
+            <h2>Complete Member Statement</h2>
+            <div class="bill-info">
+                <span>Bill No: ${BILL_NO}</span>
+                <span>Previous Bill: ${PREV_BL_NO}</span>
+                <span>Date: ${BILL_DATE}</span>
+            </div>
+        </div>
+
+        <!-- Member Information Section -->
+        <div class="member-section">
+            <div class="section-title">Member Information</div>
+            <div class="two-column">
+                <div class="column">
+                    <div class="field-row">
+                        <span class="field-label">Name:</span>
+                        <span class="field-value">${NAME}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Flat Number:</span>
+                        <span class="field-value">${FLAT_NO}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Code Number:</span>
+                        <span class="field-value">${CODE_NO}</span>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field-row">
+                        <span class="field-label">Period From:</span>
+                        <span class="field-value">${MONTH_FROM} ${YEAR}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Period To:</span>
+                        <span class="field-value">${MONTH_TO} ${YEAR}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Due Date:</span>
+                        <span class="field-value">${DUE_DATE}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charges Breakdown Table -->
+        <div class="section-title">Charges Breakdown</div>
+        <table class="charges-table">
+            <thead>
+                <tr>
+                    <th style="width: 60%">Description</th>
+                    <th style="width: 40%">Amount (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Municipal & Government Charges -->
+                <tr class="total-row">
+                    <td colspan="2"><strong>Municipal & Government Charges</strong></td>
+                </tr>
+                <tr>
+                    <td>BMC Tax</td>
+                    <td class="amount">${BMC_TAX}</td>
+                </tr>
+                <tr>
+                    <td>Differential Property Tax</td>
+                    <td class="amount">${DIFPRP_TAX}</td>
+                </tr>
+                <tr>
+                    <td>Tax Difference</td>
+                    <td class="amount">${TAX_DIF}</td>
+                </tr>
+                
+                <!-- Maintenance Charges -->
+                <tr class="total-row">
+                    <td colspan="2"><strong>Maintenance & Utility Charges</strong></td>
+                </tr>
+                <tr>
+                    <td>Maintenance Charges</td>
+                    <td class="amount">${MAINT_CHG}</td>
+                </tr>
+                <tr>
+                    <td>Water Charges</td>
+                    <td class="amount">${WATER_CHG}</td>
+                </tr>
+                <tr>
+                    <td>Electricity Charges</td>
+                    <td class="amount">${ELECT_CHG}</td>
+                </tr>
+                <tr>
+                    <td>Lift Maintenance</td>
+                    <td class="amount">${LIFT_MAINT}</td>
+                </tr>
+                
+                <!-- Fund Contributions -->
+                <tr class="total-row">
+                    <td colspan="2"><strong>Fund Contributions</strong></td>
+                </tr>
+                <tr>
+                    <td>Sinking Fund</td>
+                    <td class="amount">${SINK_FUND}</td>
+                </tr>
+                <tr>
+                    <td>Repair Fund</td>
+                    <td class="amount">${REP_FUND}</td>
+                </tr>
+                <tr>
+                    <td>Building Fund</td>
+                    <td class="amount">${BLDG_FUND}</td>
+                </tr>
+                <tr>
+                    <td>Painting Fund</td>
+                    <td class="amount">${PAINT_FD}</td>
+                </tr>
+                
+                <!-- Additional Charges -->
+                <tr class="total-row">
+                    <td colspan="2"><strong>Additional Charges</strong></td>
+                </tr>
+                <tr>
+                    <td>Letting Out Charges</td>
+                    <td class="amount">${LET_OUT_CH}</td>
+                </tr>
+                <tr>
+                    <td>Parking Charges</td>
+                    <td class="amount">${PARK_CHG}</td>
+                </tr>
+                <tr>
+                    <td>Salary Contribution</td>
+                    <td class="amount">${SALARY}</td>
+                </tr>
+                <tr>
+                    <td>Legal Charges</td>
+                    <td class="amount">${LEGAL_CHG}</td>
+                </tr>
+                <tr>
+                    <td>Maple Charges</td>
+                    <td class="amount">${MAPLE_CHG}</td>
+                </tr>
+                <tr>
+                    <td>Other Charges 1</td>
+                    <td class="amount">${OTHER_CHG1}</td>
+                </tr>
+                <tr>
+                    <td>Other Charges 2</td>
+                    <td class="amount">${OTHER_CHG2}</td>
+                </tr>
+                <tr>
+                    <td>Interest</td>
+                    <td class="amount">${INTEREST}</td>
+                </tr>
+                <tr>
+                    <td>Extra Charges</td>
+                    <td class="amount">${EXTRA}</td>
+                </tr>
+                
+                <!-- Subtotal -->
+                <tr class="total-row">
+                    <td><strong>Current Period Total</strong></td>
+                    <td class="amount"><strong>${TOTAL}</strong></td>
+                </tr>
+                
+                <!-- Previous Balances -->
+                <tr>
+                    <td>Previous Arrears</td>
+                    <td class="amount">${ARREARS}</td>
+                </tr>
+                <tr>
+                    <td>Interest on Arrears</td>
+                    <td class="amount">${INT_ARREAR}</td>
+                </tr>
+                <tr>
+                    <td>Less: Advance Paid</td>
+                    <td class="amount">-${ADVANCE}</td>
+                </tr>
+                
+                <!-- Grand Total -->
+                <tr class="grand-total-row">
+                    <td><strong>GRAND TOTAL PAYABLE</strong></td>
+                    <td class="amount"><strong>${GR_TOTAL}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Payment Details Section -->
+        <div class="payment-section">
+            <div class="section-title">Payment Details</div>
+            <div class="payment-grid">
+                <!-- Payment 1 -->
+                <div class="payment-detail">
+                    <h4>Payment 1</h4>
+                    <div class="field-row">
+                        <span class="field-label">Cheque No:</span>
+                        <span class="field-value">${CHEQUE_NO1}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Date:</span>
+                        <span class="field-value">${CHEQUE_DT1}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Bank:</span>
+                        <span class="field-value">${BANK1}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Amount:</span>
+                        <span class="field-value">${REC_AMT1}</span>
+                    </div>
+                </div>
+                
+                <!-- Payment 2 -->
+                <div class="payment-detail">
+                    <h4>Payment 2</h4>
+                    <div class="field-row">
+                        <span class="field-label">Cheque No:</span>
+                        <span class="field-value">${CHEQUE_NO2}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Date:</span>
+                        <span class="field-value">${CHEQUE_DT2}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Bank:</span>
+                        <span class="field-value">${BANK2}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Amount:</span>
+                        <span class="field-value">${REC_AMT2}</span>
+                    </div>
+                </div>
+                
+                <!-- Payment 3 -->
+                <div class="payment-detail">
+                    <h4>Payment 3</h4>
+                    <div class="field-row">
+                        <span class="field-label">Cheque No:</span>
+                        <span class="field-value">${CHEQUE_NO3}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Date:</span>
+                        <span class="field-value">${CHEQUE_DT3}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Bank:</span>
+                        <span class="field-value">${BANK3}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Amount:</span>
+                        <span class="field-value">${REC_AMT3}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary-section">
+            <div class="section-title">Payment Summary</div>
+            <div class="two-column">
+                <div class="column">
+                    <div class="field-row">
+                        <span class="field-label">Total Amount Received:</span>
+                        <span class="field-value">${REC_AMT}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Receipt Number:</span>
+                        <span class="field-value">${REC_NO}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Receipt Date:</span>
+                        <span class="field-value">${REC_DATE}</span>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field-row">
+                        <span class="field-label">Outstanding Balance:</span>
+                        <span class="field-value">${OUTST_BAL}</span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Due Date:</span>
+                        <span class="field-value">${DUE_DATE}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Amount in Words -->
+            <div style="margin-top: 15px; border-top: 1px solid #ccc; padding-top: 10px;">
+                <div class="field-row">
+                    <span class="field-label">Amount in Words:</span>
+                </div>
+                <div style="margin-top: 5px; font-weight: bold; font-style: italic;">
+                    ${REC_WORD}
+                </div>
+            </div>
+        </div>
+
+        <!-- Remarks Section -->
+        <div class="member-section">
+            <div class="section-title">Remarks & Notes</div>
+            <div class="two-column">
+                <div class="column">
+                    <div class="field-row">
+                        <span class="field-label">Remarks 1:</span>
+                        <span class="field-value">${REMARKS1}</span>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field-row">
+                        <span class="field-label">Remarks 2:</span>
+                        <span class="field-value">${REMARKS2}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <div style="text-align: center; margin-bottom: 15px;">
+                <p><strong>Thank you for your cooperation and timely payment!</strong></p>
+                <p style="font-size: 9px;">This is a computer generated bill. For any queries, please contact the society office.</p>
+            </div>
+            
+            <!-- Signature Section -->
+            <div class="signature-section">
+                <div class="signature-box">
+                    <div class="signature-line">Prepared By</div>
+                </div>
+                <div class="signature-box">
+                    <div class="signature-line">Verified By</div>
+                </div>
+                <div class="signature-box">
+                    <div class="signature-line">Secretary/Treasurer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

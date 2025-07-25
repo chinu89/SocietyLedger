@@ -1,0 +1,187 @@
+/* App.css - Theme Compatible Version */
+
+/* Remove the restrictive #root styles that were causing issues */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* App container styles */
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-secondary);
+  transition: background-color 200ms ease;
+}
+
+/* Remove logo styles as they're not needed for our app */
+.logo {
+  display: none;
+}
+
+/* Update card styles to work with our theme system */
+.card {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  transition: all 200ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transform: translateY(-2px);
+}
+
+/* Remove the docs color override */
+.read-the-docs {
+  color: var(--color-text-tertiary);
+  transition: color 200ms ease;
+}
+
+/* Ensure proper text selection colors for both themes */
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-text-primary);
+}
+
+/* Ensure proper focus styles */
+*:focus {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Override any global text alignment */
+* {
+  text-align: inherit;
+}
+
+/* Fix for centered text issue */
+body, #root, .App {
+  text-align: left;
+}
+
+/* Ensure headings and paragraphs align left */
+h1, h2, h3, h4, h5, h6, p, div {
+  text-align: left;
+}
+
+/* Center only specific elements that should be centered */
+.text-center {
+  text-align: center;
+}
+
+/* Button base styles that work with our theme */
+button {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-medium);
+  transition: all 150ms ease;
+}
+
+button:hover {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border-dark);
+}
+
+/* Input base styles */
+input, select, textarea {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-light);
+  transition: all 150ms ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+/* Dark mode specific adjustments */
+.theme-dark input,
+.theme-dark select,
+.theme-dark textarea {
+  background-color: var(--color-bg-tertiary);
+}
+
+.theme-dark input:focus,
+.theme-dark select:focus,
+.theme-dark textarea:focus {
+  box-shadow: 0 0 0 3px var(--color-primary-200);
+}
+
+/* Remove any keyframe animations that might conflict */
+@keyframes logo-spin {
+  /* Disabled - not needed */
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  #root {
+    padding: 0;
+  }
+  
+  .card {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  #root {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .card {
+    border-width: 2px;
+  }
+  
+  button {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

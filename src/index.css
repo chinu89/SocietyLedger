@@ -1,0 +1,499 @@
+/* src/index.css - Cleaned and Optimized */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* CSS Custom Properties for Theme System */
+:root {
+  /* Default Light Theme Colors */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-tertiary: #f1f5f9;
+  --color-bg-accent: #e2e8f0;
+  
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-text-inverse: #ffffff;
+  
+  --color-border-light: #e2e8f0;
+  --color-border-medium: #cbd5e1;
+  --color-border-dark: #94a3b8;
+  
+  --color-status-success: #10b981;
+  --color-status-warning: #f59e0b;
+  --color-status-error: #ef4444;
+  --color-status-info: #3b82f6;
+
+  /* Animation and transition variables */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+/* Dark theme class */
+.theme-dark {
+  --color-primary-50: #1e293b;
+  --color-primary-100: #334155;
+  --color-primary-200: #475569;
+  --color-primary-300: #64748b;
+  --color-primary-400: #94a3b8;
+  --color-primary-500: #cbd5e1;
+  --color-primary-600: #e2e8f0;
+  --color-primary-700: #f1f5f9;
+  --color-primary-800: #f8fafc;
+  --color-primary-900: #ffffff;
+  
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-tertiary: #334155;
+  --color-bg-accent: #475569;
+  
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #e2e8f0;
+  --color-text-tertiary: #cbd5e1;
+  --color-text-inverse: #1e293b;
+  
+  --color-border-light: #334155;
+  --color-border-medium: #475569;
+  --color-border-dark: #64748b;
+  
+  --color-status-success: #22c55e;
+  --color-status-warning: #eab308;
+  --color-status-error: #f87171;
+  --color-status-info: #60a5fa;
+
+  /* Dark mode shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+/* Base Styling */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  line-height: 1.6;
+}
+
+/* DARK MODE FIXES - CONSOLIDATED */
+
+/* Fix dropdown/select elements in dark mode */
+.dark select {
+  background-color: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #6b7280 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") !important;
+  background-position: right 0.5rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.5em 1.5em !important;
+  padding-right: 2.5rem !important;
+}
+
+.dark select option {
+  background-color: #374151 !important;
+  color: #f9fafb !important;
+}
+
+/* Fix input and textarea elements in dark mode */
+.dark input,
+.dark textarea {
+  background-color: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #6b7280 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Fix focus states for form elements */
+.dark select:focus,
+.dark input:focus,
+.dark textarea:focus {
+  border-color: #3b82f6 !important;
+  background-color: #374151 !important;
+}
+
+/* Fix background colors in dark mode - COMPREHENSIVE */
+.dark .bg-white {
+  background-color: #1f2937 !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #374151 !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #4b5563 !important;
+}
+
+/* Fix colored backgrounds */
+.dark .bg-blue-50 {
+  background-color: #1e3a8a !important;
+  border-color: #1d4ed8 !important;
+}
+
+.dark .bg-blue-100 {
+  background-color: #1e40af !important;
+  border-color: #2563eb !important;
+}
+
+.dark .bg-green-50 {
+  background-color: #065f46 !important;
+  border-color: #047857 !important;
+}
+
+.dark .bg-green-100 {
+  background-color: #047857 !important;
+  border-color: #059669 !important;
+}
+
+.dark .bg-teal-50 {
+  background-color: #134e4a !important;
+  border-color: #0f766e !important;
+}
+
+.dark .bg-cyan-50 {
+  background-color: #164e63 !important;
+  border-color: #0891b2 !important;
+}
+
+.dark .bg-indigo-50 {
+  background-color: #312e81 !important;
+  border-color: #4f46e5 !important;
+}
+
+.dark .bg-emerald-50 {
+  background-color: #064e3b !important;
+  border-color: #047857 !important;
+}
+
+.dark .bg-purple-50 {
+  background-color: #581c87 !important;
+  border-color: #7c3aed !important;
+}
+
+.dark .bg-yellow-50 {
+  background-color: #92400e !important;
+  border-color: #d97706 !important;
+}
+
+.dark .bg-red-50 {
+  background-color: #991b1b !important;
+  border-color: #dc2626 !important;
+}
+
+/* Fix text colors in dark mode */
+.dark .text-gray-900 {
+  color: #1d4ed8 !important;
+}
+
+.dark .text-gray-800 {
+  color: #f3f4f6 !important;
+}
+
+.dark .text-gray-700 {
+  color: #e5e7eb !important;
+}
+
+.dark .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+.dark .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+.dark .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+/* Fix colored text for proper contrast */
+.dark .text-blue-600 {
+  color: #60a5fa !important;
+}
+
+.dark .text-blue-700 {
+  color: #93c5fd !important;
+}
+
+.dark .text-blue-800 {
+  color: #60a5fa !important;
+}
+
+.dark .text-blue-900 {
+  color: #3b82f6 !important;
+}
+
+.dark .text-green-600 {
+  color: #34d399 !important;
+}
+
+.dark .text-green-700 {
+  color: #6ee7b7 !important;
+}
+
+.dark .text-green-800 {
+  color: #34d399 !important;
+}
+
+.dark .text-green-900 {
+  color: #10b981 !important;
+}
+
+.dark .text-teal-600 {
+  color: #2dd4bf !important;
+}
+
+.dark .text-teal-700 {
+  color: #5eead4 !important;
+}
+
+.dark .text-teal-800 {
+  color: #2dd4bf !important;
+}
+
+.dark .text-teal-900 {
+  color: #14b8a6 !important;
+}
+
+.dark .text-purple-600 {
+  color: #c084fc !important;
+}
+
+.dark .text-purple-700 {
+  color: #a855f7 !important;
+}
+
+.dark .text-purple-800 {
+  color: #9333ea !important;
+}
+
+.dark .text-yellow-600 {
+  color: #fbbf24 !important;
+}
+
+.dark .text-yellow-700 {
+  color: #f59e0b !important;
+}
+
+.dark .text-yellow-800 {
+  color: #d97706 !important;
+}
+
+.dark .text-red-600 {
+  color: #ef4444 !important;
+}
+
+.dark .text-orange-600 {
+  color: #f97316 !important;
+}
+
+/* Fix borders in dark mode */
+.dark .border-gray-100 {
+  border-color: #374151 !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #4b5563 !important;
+}
+
+.dark .border-gray-300 {
+  border-color: #6b7280 !important;
+}
+
+.dark .border-blue-200 {
+  border-color: #1d4ed8 !important;
+}
+
+.dark .border-green-200 {
+  border-color: #047857 !important;
+}
+
+.dark .border-teal-200 {
+  border-color: #0f766e !important;
+}
+
+.dark .border-purple-200 {
+  border-color: #7c3aed !important;
+}
+
+.dark .border-yellow-200 {
+  border-color: #d97706 !important;
+}
+
+/* Fix shadows in dark mode */
+.dark .shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Force fix for theme boxes and rounded containers */
+.dark .rounded-lg,
+.dark .rounded-xl {
+  background-color: #1f2937 !important;
+}
+
+/* SPECIAL FIX FOR THEME BOX - This targets the specific theme preview box */
+.dark .bg-white.rounded-lg {
+  background-color: #1f2937 !important;
+  border: 1px solid #4b5563 !important;
+}
+
+/* Fix any remaining stubborn white backgrounds */
+.dark [class*="bg-white"] {
+  background-color: #1f2937 !important;
+}
+
+.dark [class*="bg-gray-50"] {
+  background-color: #374151 !important;
+}
+
+/* Force override for any inline styles or specific components */
+.dark div[class*="bg-white"],
+.dark span[class*="bg-white"],
+.dark section[class*="bg-white"] {
+  background-color: #1f2937 !important;
+}
+
+/* Ensure all headings are visible */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #9333ea !important;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-medium);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-dark);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-medium) var(--color-bg-tertiary);
+}
+
+/* Reduced motion preferences */
+.reduce-motion,
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    border-radius: var(--radius-lg);
+    margin: 0.5rem;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border-light: #000000;
+    --color-border-medium: #000000;
+    --color-text-tertiary: var(--color-text-secondary);
+  }
+  
+  .theme-dark {
+    --color-border-light: #ffffff;
+    --color-border-medium: #ffffff;
+  }
+}
+
+/* Focus Styles for Accessibility */
+.focus-visible,
+*:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
