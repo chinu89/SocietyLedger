@@ -1,0 +1,106 @@
+{
+  "societies": [
+	{
+      "id": "COSY",
+      "name": "NEW COSY NOOK CO-OPERATIVE HSG.SOC.LTD.",
+      "regNo": "BOM/WR/HSG.(TC)/5158 OF 1990 - 1991",
+      "address": "I. C. COLONY, BORIVALI WEST, MUMBAI 400103",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+	{
+      "id": "FRIENDS",
+      "name": "FRIENDS SAI NIKETAN  CO-OPERATIVE HOUSING SOCIETY LTD.",
+      "regNo": "BOM/WR/HSG/TC/1114/84-85 DATED 20-10-1984",
+      "address": "B. PARAB ROAD, KANDARPADA, DAHISAR WEST, MUMBAI 400068",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+	{
+      "id": "GOLDBUDS",
+      "name": "GOLD BUDS CO-OPERATIVE HSG.SOC.LTD.",
+      "regNo": "MUM/W-R/HSG/TC/12026/2003-2004 DATE 27-05-2003",
+      "address": "LAXMAN MHATRE ROAD, NAVAGAON, DAHISAR (WEST), MUMBAI 400068",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "JOANA",
+      "name": "JOANA PARK CO-OPERATIVE HOUSING SOCIETY LTD.",
+      "regNo": "BOM/WR/HSG/TC/9899/97/98/97 DATED 04-11-1997",
+      "address": "LAXMAN MHATRE ROAD, KANDARPADA, DAHISAR WEST, MUMBAI 400068",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "JOANA2",
+      "name": "JOANA PARK BLDG-2 CO-OPERATIVE HOUSING SOCIETY LTD.",
+      "regNo": "MUM/WR-U/HSG/TC/15361/2013-2014/2013 Dated 22-10-2013",
+      "address": "S-NO.132,H NO.3, VILLAGE EKSAR, L. M. ROAD, NEAR RBI STAFF QUARTERS, KANDARPADA, DAHISAR (WEST), MUMBAI 400068",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "KAVERI",
+      "name": "NEW KAVERI DAHISAR CO-OPERATIVE HSG.SOC.LTD.",
+      "regNo": "BOM(WR)HSG(II)5169-1990",
+      "address": "BAPU BAGWE ROAD, KANDARPADA, DAHISAR (WEST), MUMBAI 400068",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "MADHUVILLA",
+      "name": "MADHU VILLA CO-OPERATIVE HOUSING SOC.LTD.",
+      "regNo": "MUM/WR/HSG/TC/15224/2012-2013 DATED 09-11-2012",
+      "address": "CTS NO.1514, DEVIDAS ROAD EXTN.,DEVKI NAGAR,EKKSAR, BORIVALI (WEST), MUMBAI 400103",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "RHYTHM",
+      "name": "RHYTHM HOUSE CO-OPERATIVE HOUSING SOCIETY LTD.",
+      "regNo": "BOM/WR/HSG/TC/9471/96-97/96",
+      "address": "LAXMAN MHATRE ROAD, DAHISAR WEST, MUMBAI 400068",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "SAROVAR",
+      "name": "SAROVAR CO-OPERATIVE HOUSING SOCIETY LTD.",
+      "regNo": "BOM/WR/HSG/TC/5815/of 1991-192 Dated 07-09-1991",
+      "address": "CTS 1513, PLOT 2, EKSAR VILLAGE, EKSAR ROAD, NR. DEVKI NAGAR, BORIVALI (W), MUMBAI 400103",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "SBI SAHISHNUTA",
+      "name": "SBI EMPLOYEES 'SAHISHNUTA' CO-OP.HSG.SOC. LTD.",
+      "regNo": "BOM/HSG/278 DT. 07/01/1963",
+      "address": "SAHISHNUTA, ROKADIA LANE, SVP ROAD, BORIVALI (WEST) MUMBAI 400092",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "SHIVAM",
+      "name": "SHREE SHIVAM CO-OPERATIVE HOUSING SOCIETY LTD.",
+      "regNo": "MUM/WR/HSG/TC/14195/2008-2009/YR 2008 Dated 22-05-2008",
+      "address": "CTS 677, 677/1, VILLAGE - DAHISAR, RAGHUNATH MHATRE ROAD, DAHISAR WEST, MUMBAI 400068",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "VICTOR",
+      "name": "VICTOR SHELTER CO-OP. HSG .SOCIETY LTD.",
+      "regNo": "MUM/SRA/HSG/(T.C.)/13370/2022 DATED 12/12/2022",
+      "address": "MITHAGHAR ROAD, KANDARPADA, DAHISAR (WEST), MUMBAI 400068",
+      "isDefault": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-01-01T00:00:00.000Z",
+    "description": "Default society configurations for Gawde Account Service",
+    "totalSocieties": 8
+  }
+}

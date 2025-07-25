@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+BLQ12526.xlsx
+BLQ12526_Report.xlsx
+BLQ12526_test.xlsx
+package-lock.json
+guide.txt
+Ack Template.xlsx
+BLQ12526-DESKTOP-ONC55EA.csv
+BLQ12526.csv
+excel_report.xlsx
+json_template.txt
+maint bill.xlsx
+New engine logic.txt
+output excel.pdf
+package-lock.json
+process3.txt
+RuleConverterDocumentation.txt
+RuleConverterInterface.txt
+UpdateReceiptFile.xlsx
+UpdateReceiptFile_Process3.xlsx
+package-lock.json
+src/assets/icon.ico
