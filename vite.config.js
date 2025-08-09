@@ -2,8 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
+// Detect if building for GitHub Pages (CI or deploy script)
+const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+
 export default defineConfig({
-  base: './', // ✅ This line is necessary for Electron
+  base: isGitHubPages ? '/SocietyLedger/' : './',
   plugins: [react()],
   resolve: {
     alias: {
